@@ -35,6 +35,13 @@ public class LoginController {
 		return new Date() + "";
 	}
 	
+	@RequestMapping(value = "/showbody", method = RequestMethod.POST)
+	public String showBody(String body) {
+		logger.info("showBody={}", body);
+		return body;
+	}
+	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password) {
 		logger.info("showWelcomePage-model{}", model);
