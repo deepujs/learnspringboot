@@ -1,5 +1,7 @@
 package com.demo.controller;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,12 @@ public class LoginController {
 		return "login";
 	}
 
+	@RequestMapping(value = "/time", method = RequestMethod.GET)
+	public String currentTime() {
+		logger.info("currentTime");
+		return new Date() + "";
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String showWelcomePage(ModelMap model, @RequestParam String name, @RequestParam String password) {
 		logger.info("showWelcomePage-model{}", model);
